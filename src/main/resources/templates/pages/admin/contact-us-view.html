@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>contact us messages</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        thead tr {
+            background-color: #eee;
+        }
+
+        thead td {
+            color: #333;
+            font-size: 16px;
+            padding: 8px 16px;
+            max-width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        tbody img {
+            width: 100px;
+            max-height: 100px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #eee;
+        }
+
+        tbody td {
+            max-width: 250px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+<th:block th:insert="pages/admin/fragments::header"></th:block>
+
+<h2>Name</h2>
+<p th:text="${contact.name}"></p>
+
+<h2>Email</h2>
+<p th:text="${contact.email}"></p>
+
+<h2>Message</h2>
+<p th:text="${contact.message}"></p>
+
+
+</body>
+</html>

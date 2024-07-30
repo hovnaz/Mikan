@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>product update</title>
+</head>
+<style>
+    input, textarea {
+        display: block;
+        padding: 8px 16px;
+        border: 1px solid #c4c0c0;
+        border-radius: 5px;
+        color: #333;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    textarea {
+        min-height: 30px;
+        max-height: 500px;
+    }
+
+    form {
+        display: flex;
+        width: 80%;
+        margin: 40px auto 0 auto;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    img {
+        width: 100px;
+    }
+
+    button {
+        padding: 8px 16px;
+        background-color: #0a4b78;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+<body>
+<th:block th:insert="pages/admin/fragments::header"></th:block>
+<form action="/admin/product/edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" th:value="${product.id}">
+    <input type="text" placeholder="title english" th:value="${product.titleUs}" name="titleUs" required
+           maxlength="255">
+    <input type="text" placeholder="title russian" th:value="${product.titleRu}" name="titleRu" minlength="4">
+    <input type="text" placeholder="title armenian" th:value="${product.titleHy}" name="titleHy" minlength="4">
+    <textarea placeholder="description english" th:text="${product.descriptionUs}" name="descriptionUs" minlength="8"
+              maxlength="500"></textarea>
+    <textarea placeholder="description russian" th:text="${product.descriptionRu}" name="descriptionRu" minlength="8"
+              maxlength="500"></textarea>
+    <textarea placeholder="description armenian" th:text="${product.descriptionHy}" name="descriptionHy" minlength="8"
+              maxlength="500"></textarea>
+    <div style="display: flex; gap: 5px; align-items: center">
+        <img th:src="'/getProductPic/' + ${product.image}" alt="">
+        <input id="file" type="file" name="imageFile" accept="image/png, image/gif, image/jpeg" style="border: none">
+    </div>
+    <button type="submit" onclick="return confirm('Are you sure you want to Update Product?')">Update</button>
+</form>
+
+<script>
+    var uploadField = document.getElementById("file");
+
+    uploadField.onchange = function () {
+        if (this.files[0].size > 15971520) {
+            alert("File is too big! Limit image 15mb");
+            this.value = "";
+        }
+    };
+</script>
+</body>
+</html>

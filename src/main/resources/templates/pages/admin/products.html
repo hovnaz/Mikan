@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        thead tr {
+            background-color: #eee;
+        }
+
+        thead td {
+            color: #333;
+            font-size: 16px;
+            padding: 8px 16px;
+            max-width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        tbody img {
+            width: 100px;
+            max-height: 100px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #eee;
+        }
+
+        tbody td {
+            max-width: 150px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+<th:block th:insert="pages/admin/fragments::header"></th:block>
+<table>
+    <thead>
+    <td>Image</td>
+    <td>Title Us</td>
+    <td>Title Ru</td>
+    <td>Title Hy</td>
+    <td>Description English</td>
+    <td>Description Russian</td>
+    <td>Description Armenian</td>
+    <td>Action</td>
+    </thead>
+    <tbody>
+    <tr th:each="product: ${productsList}">
+        <td><img th:src="'/getProductPic/' + ${product.image}"></td>
+        <td th:text="${product.titleUs}"></td>
+        <td th:text="${product.titleRu}"></td>
+        <td th:text="${product.titleHy}"></td>
+        <td th:text="${product.descriptionUs}"></td>
+        <td th:text="${product.descriptionRu}"></td>
+        <td th:text="${product.descriptionHy}"></td>
+        <td>
+            <a th:href="'/admin/product/delete/' + ${product.id}"
+               onclick="return confirm('Are you sure you want to Delete?')">delete</a>
+            <a th:href="'/admin/product/edit/' + ${product.id}">edit</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

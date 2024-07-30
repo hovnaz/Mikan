@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<body>
+<!--todo js_ fonts-->
+    <th:block th:fragment="header">
+        <link rel='dns-prefetch' href='//fonts.googleapis.com'>
+        <link rel="icon" href="../../resource/logo.png" type="image/icon type">
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin="">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel='stylesheet' id='goodresto-style-css' href='../../assets/content/themes/goodresto/style.css'
+              type='text/css'
+              media='all'>
+        <link rel='stylesheet' id='js_composer_front-css'
+              href='../../assets/content/plugins/js_composer/assets/css/js_composer.min.css' type='text/css' media='all'>
+        <link rel='stylesheet' id='dynamic-styles-css' href='../../assets/content/themes/goodresto/css/dynamic-styles.css'
+              type='text/css' media='all'>
+        <link rel="stylesheet" href="../../assets/css/all.css">
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <script type='text/javascript' src='../../assets/includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+        <script type='text/javascript' src='../../assets/includes/js/jquery/script.js'></script>
+        <script type='text/javascript' src='../../assets/includes/js/jquery/jquery-migrate.min.js'
+                id='jquery-migrate-js'></script>
+        <script type='text/javascript' src='../../assets/content/plugins/revslider/public/assets/js/rbtools.min.js' async=""
+                id='tp-tools-js'></script>
+        <script type='text/javascript' src='../../assets/content/plugins/revslider/public/assets/js/rs6.min.js' async=""
+                id='revmin-js'></script>
+        <script type='text/javascript'
+                src='../../assets/content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js'
+                id='jquery-blockui-js'></script>
+
+    </th:block>
+
+    <th:block th:fragment="footer">
+        <link rel='stylesheet' id='rs-plugin-settings-css'
+              href='../../assets/content/plugins/revslider/public/assets/css/rs6.css'
+              type='text/css' media='all'>
+
+
+
+        <script type='text/javascript' src='../../assets/includes/js/imagesloaded.min.js' id='imagesloaded-js'></script>
+        <script type='text/javascript' src='../../assets/includes/js/hoverIntent.min.js' id='hoverIntent-js'></script>
+        <script type='text/javascript' id='controller-js-extra'><!-- todo not   -->
+        /* <![CDATA[ */
+        var controller_opt = {
+            "customScroll": "false",
+            "customScrollCursorcolor": "#222222",
+            "customScrollRailcolor": "#666666",
+            "customScrollCursorOpacityMin": "100",
+            "customScrollCursorOpacityMax": "100",
+            "customScrollCursorWidth": "10",
+            "customScrollCursorBorderRadius": "5",
+            "customScrollScrollSpeed": "60",
+            "customScrollMouseScrollStep": "40",
+            "postMax": "0",
+            "postStartPage": "1",
+            "postNoText": "No more posts",
+            "stickyHeaderHeight": "72",
+            "eventMax": "0",
+            "eventNoText": "No more events",
+            "eventLoadingText": "Loading events",
+            "menuMax": "0",
+            "menuNoText": "No more items",
+            "menuLoadingText": "Loading items",
+            "productMax": "0",
+            "productNoText": "No more products",
+            "productLoadingText": "Loading products",
+            "productButtonClass": "product-single-button",
+        };
+        /* ]]> */
+        </script>
+        <!-- todo not -->
+        <script type='text/javascript' src='../../assets/content/themes/goodresto/js/controller-combined.js'
+                id='controller-js'></script>
+        <script type='text/javascript' src='../../assets/content/plugins/js_composer/assets/js/dist/js_composer_front.min.js'
+                id='wpb_composer_front_js-js'></script>
+        <script type='text/javascript'
+                src='../../assets/content/plugins/js_composer/assets/lib/vc_waypoints/vc-waypoints.min.js'
+                id='vc_waypoints-js'></script>
+        <script id="rs-initialisation-scripts">
+            var revapi1;
+
+            if (window.RS_MODULES === undefined) window.RS_MODULES = {};
+            if (RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+            RS_MODULES.modules["revslider11"] = {
+                once: RS_MODULES.modules["revslider11"] !== undefined ? RS_MODULES.modules["revslider11"].once : undefined,
+                init: function () {
+                    window.revapi1 = window.revapi1 === undefined || window.revapi1 === null || window.revapi1.length === 0 ? document.getElementById("rev_slider_1_1") : window.revapi1;
+                    if (window.revapi1 === null || window.revapi1 === undefined || window.revapi1.length == 0) {
+                        window.revapi1initTry = window.revapi1initTry === undefined ? 0 : window.revapi1initTry + 1;
+                        if (window.revapi1initTry < 20) requestAnimationFrame(function () {
+                            RS_MODULES.modules["revslider11"].init()
+                        });
+                        return;
+                    }
+                    window.revapi1 = jQuery(window.revapi1);
+                    if (window.revapi1.revolution == undefined) {
+                        revslider_showDoubleJqueryError("rev_slider_1_1");
+                        return;
+                    }
+                    revapi1.revolutionInit({
+                        revapi: "revapi1",
+                        sliderLayout: "fullscreen",
+                        visibilityLevels: "1240,1024,778,480",
+                        gridwidth: "1200,960,620,320",
+                        gridheight: "974,720,480,480",
+                        lazyType: "smart",
+                        spinner: "spinner0",
+                        perspective: 600,
+                        perspectiveType: "local",
+                        editorheight: "974,720,480,480",
+                        responsiveLevels: "1240,1024,778,480",
+                        progressBar: {disableProgressBar: true},
+                        navigation: {
+                            mouseScrollNavigation: false,
+                            onHoverStop: false,
+                            touch: {
+                                touchenabled: true,
+                                touchOnDesktop: true
+                            }
+                        },
+                        parallax: {
+                            levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 5],
+                            type: "mouse",
+                            origo: "slidercenter"
+                        },
+                        fanim: {
+                            in: {"o": 0},
+                            out: {"a": false},
+                            speed: 600
+                        },
+                        scrolleffect: {
+                            set: true,
+                            grayscale: true,
+                            slide: true,
+                            multiplicator: 1.3,
+                            multiplicator_layers: 1.3,
+                            disable_onmobile: true
+                        },
+                        viewPort: {
+                            global: true,
+                            globalDist: "-200px",
+                            enable: false,
+                            visible_area: "20%"
+                        },
+                        fallbacks: {
+                            allowHTML5AutoPlayOnAndroid: true
+                        },
+                    });
+
+                }
+            } // End of RevInitScript
+
+            if (window.RS_MODULES.checkMinimal !== undefined) {
+                window.RS_MODULES.checkMinimal();
+            }
+        </script>
+    </th:block>
+</body>
+</html>

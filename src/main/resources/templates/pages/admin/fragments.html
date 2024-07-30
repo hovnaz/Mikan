@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<body>
+<th:block th:fragment="header">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 5px #d3d3d3;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            align-items: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        header a.active {
+            color: #cf0707 !important;
+        }
+    </style>
+
+    <header>
+        <a href="/">Home page</a>
+        <a href="/admin/products"
+           th:class="${currentUrl == '/admin/products' or currentUrl == '/admin/products/' ? 'active' : ''}">Products</a>
+        <a href="/admin/feedback"
+           th:class="${currentUrl == '/admin/feedback' or currentUrl == '/admin/feedback/' ? 'active': ''}">Feedback
+            messages</a>
+        <a href="/admin/contact-us"
+           th:class="${currentUrl == '/admin/contact-us' or currentUrl == '/admin/contact-us/' ? 'active' : ''}">Contact
+            us
+            messages</a>
+        <a href="/admin/product/create"
+           th:class="${currentUrl == '/admin/product/create' or currentUrl == '/admin/product/create/' ? 'active' : ''}">create
+            product</a>
+    </header>
+</th:block>
+
+</body>
+</html>

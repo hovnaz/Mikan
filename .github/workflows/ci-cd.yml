@@ -1,0 +1,59 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy the JAR file to the remote server
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17 (OpenJDK)
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: 'temurin'
+
+      - name: Run remote scripts for stop and delete jar
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ secrets.REMOTE_PATH }}
+             sh ./scripts/stop.sh
+             rm -f KanachSnund-0.0.1-SNAPSHOT.jar
+
+      - name: Build JAR file
+        run: mvn clean install -DskipTests
+
+      - name: Print Directory Structure
+        run: |
+          echo "Directory Structure:"
+          tree -L 3
+      - name: Deploy the package to the remote server
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.SERVER_IP }}
+          port: 22
+          username: ${{ secrets.SERVER_USERNAME }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: target/KanachSnund-0.0.1-SNAPSHOT.jar
+          remote_path: ${{ secrets.REMOTE_PATH }}
+
+      - name: Run remote scripts for start jar
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ secrets.REMOTE_PATH }}
+            sh ./scripts/start.sh
+            exit

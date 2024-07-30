@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<body>
+<th:block th:fragment="headerFullScreenSlider">
+    <!-- START sliderfull REVOLUTION SLIDER 6.6.5 --><p class="rs-p-wp-fix"></p>
+    <rs-module-wrap id="headerFullScreenSlider" data-source="gallery"
+                    style="visibility:hidden;background:#212121;padding:0;background-image:url(wp-content/uploads/slider_pattern-1.png);background-repeat:repeat;background-size:contain;background-position:left top;">
+        <rs-module id="rev_slider_1_1" style="" data-version="6.6.5">
+            <rs-slides style="overflow: hidden; position: absolute;">
+                <rs-slide style="position: absolute;" data-key="rs-1" data-title="Slide 1" data-anim="r:0;"
+                          data-in="o:0;" data-out="a:false;" class="header-bg">
+                    <img src="../../resource/bg.jpg" alt="" title="Home main" class="rev-slidebg tp-rs-img rs-lazyload"
+                         data-parallax="5" data-panzoom="d:20000;ss:100;se:110;" data-no-retina="">
+                    <rs-layer class="text-wrap" data-type="text"
+                              data-xy="x:c;y:m;yo:34px,34px,34px,14px;"
+                              data-text="s:72,72,72,40;l:72,72,72,40;ls:15px,15px,15px,5px;fw:700;a:inherit;"
+                              data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50px;"
+                              data-frame_1="e:easeOutExpo;st:1100;sp:900;sR:1100;"
+                              data-frame_999="o:0;st:w;sR:7000;"
+                              style="z-index:6;font-family:'Cabin Condensed';text-transform:uppercase;white-space: normal !important;">
+                        <div class="header-span-txt-block">
+                            <span class="header-span-txt-bold">Mikan</span>
+                            <span class="header-span-txt">"ՄԻԿԱՆ"՝ ԱՐՑԱԽԱԿԱՆ ընկերություն է, որը մատուցում է տեխնիկական որակի հսկողության խորհրդատվական ծառայություններ շինարարության ոլորտում։<span
+                            ></span></span>
+                        </div>
+                    </rs-layer>
+                </rs-slide>
+                <rs-slide style="position: absolute;" data-key="rs-2" data-title="Slide 1" data-anim="r:1;"
+                          data-in="o:0;" data-out="a:false;" class="header-bg">
+                    <img src="../../resource/bg-2.jpg" alt="" title="Home main"
+                         class="rev-slidebg tp-rs-img rs-lazyload"
+                         data-parallax="5" data-panzoom="d:20000;ss:100;se:110;" data-no-retina="">
+                    <rs-layer class="text-wrap" data-type="text"
+                              data-xy="x:c;y:m;yo:34px,34px,34px,14px;"
+                              data-text="s:72,72,72,40;l:72,72,72,40;ls:15px,15px,15px,5px;fw:700;a:inherit;"
+                              data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50px;"
+                              data-frame_1="e:easeOutExpo;st:1100;sp:900;sR:1100;"
+                              data-frame_999="o:0;st:w;sR:7000;"
+                              style="z-index:6;font-family:'Cabin Condensed';text-transform:uppercase;white-space: normal !important;">
+                        <div class="header-span-txt-block">
+                            <span class="header-span-txt-bold">Mikan</span>
+                            <span class="header-span-txt">"ՄԻԿԱՆ"՝ ԱՐՑԱԽԱԿԱՆ ընկերություն է, որը մատուցում է տեխնիկական որակի հսկողության խորհրդատվական ծառայություններ շինարարության ոլորտում։<span
+                            ></span></span>
+                        </div>
+                    </rs-layer>
+                </rs-slide>
+                <rs-slide style="position: absolute;" data-key="rs-3" data-title="Slide 1" data-anim="r:1;"
+                          data-in="o:0;" data-out="a:false;" class="header-bg">
+                    <img src="../../resource/bg-3.jpg" alt="" title="Home main"
+                         class="rev-slidebg tp-rs-img rs-lazyload"
+                         data-parallax="5" data-panzoom="d:20000;ss:100;se:110;" data-no-retina="">
+                    <rs-layer class="text-wrap" data-type="text"
+                              data-xy="x:c;y:m;yo:34px,34px,34px,14px;"
+                              data-text="s:72,72,72,40;l:72,72,72,40;ls:15px,15px,15px,5px;fw:700;a:inherit;"
+                              data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50px;"
+                              data-frame_1="e:easeOutExpo;st:1100;sp:900;sR:1100;"
+                              data-frame_999="o:0;st:w;sR:7000;"
+                              style="z-index:6;font-family:'Cabin Condensed';text-transform:uppercase;white-space: normal !important;">
+                        <div class="header-span-txt-block">
+                            <span class="header-span-txt-bold">Mikan</span>
+                            <span class="header-span-txt">"ՄԻԿԱՆ"՝ ԱՐՑԱԽԱԿԱՆ ընկերություն է, որը մատուցում է տեխնիկական որակի հսկողության խորհրդատվական ծառայություններ շինարարության ոլորտում։<span
+                            ></span></span>
+                        </div>
+                    </rs-layer>
+                </rs-slide>
+            </rs-slides>
+        </rs-module>
+    </rs-module-wrap>
+</th:block>
+
+<th:block th:fragment="headerFullScreenSliderSmall (titleValue)">
+    <header class="rich-header page-header page-title-text-align-center mob-page-title-text-align-center"
+            data-opacity="true" data-parallax="true" data-fixed="true">
+        <div class="parallax-container" style="transform: translateY(0px);">&nbsp;</div>
+        <div class="container">
+            <div class="rh-content et-clearfix" style="opacity: 1;">
+                <div class="rh-title">
+                    <h1 th:text="${#strings.toUpperCase(titleValue)}"></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+</th:block>
+</body>
+</html>

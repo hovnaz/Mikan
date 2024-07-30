@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    username: postgres
+    password: PNEwzQTw2CSdW@7
+project:
+  username: kanachsnund.marketing@gmail.com
+  password: PX4vfOXIPYpRLsY
+  images:
+    product: /var/images
