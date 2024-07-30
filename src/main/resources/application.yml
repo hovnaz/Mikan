@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     username: postgres
-    password: root
+    password: PNEwzQTw2CSdW@7
     url: jdbc:postgresql://localhost:5432/mikan
   jpa:
     hibernate:
@@ -25,10 +25,10 @@ spring:
     change-log: classpath:db/migration.xml
 
 project:
-  username: admin
-  password: admin
+  username: mikan@gmail.com
+  password: PX4vfOXIPYpRLsY
   images:
-    product: E:\\images
+    product: /var/images
 
 server:
   error:
