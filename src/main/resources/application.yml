@@ -25,7 +25,7 @@ spring:
     change-log: classpath:db/migration.xml
 
 project:
-  username: mikan@gmail.com
+  username: mikan
   password: PX4vfOXIPYpRLsY
   images:
     product: /var/images

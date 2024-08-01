@@ -44,23 +44,11 @@
 <table>
     <thead>
     <td>Image</td>
-    <td>Title Us</td>
-    <td>Title Ru</td>
-    <td>Title Hy</td>
-    <td>Description English</td>
-    <td>Description Russian</td>
-    <td>Description Armenian</td>
     <td>Action</td>
     </thead>
     <tbody>
     <tr th:each="product: ${productsList}">
         <td><img th:src="'/getProductPic/' + ${product.image}"></td>
-        <td th:text="${product.titleUs}"></td>
-        <td th:text="${product.titleRu}"></td>
-        <td th:text="${product.titleHy}"></td>
-        <td th:text="${product.descriptionUs}"></td>
-        <td th:text="${product.descriptionRu}"></td>
-        <td th:text="${product.descriptionHy}"></td>
         <td>
             <a th:href="'/admin/product/delete/' + ${product.id}"
                onclick="return confirm('Are you sure you want to Delete?')">delete</a>

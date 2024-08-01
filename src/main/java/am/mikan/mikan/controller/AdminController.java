@@ -59,12 +59,6 @@ public class AdminController {
                                 @RequestParam(value = "id") int id,
                                 @RequestParam(value = "imageFile", required = false) MultipartFile file) {
         Product product = productService.findById(id);
-        product.setTitleHy(productCrudRequest.getTitleHy());
-        product.setTitleUs(productCrudRequest.getTitleUs());
-        product.setTitleRu(productCrudRequest.getTitleRu());
-        product.setDescriptionHy(productCrudRequest.getDescriptionHy());
-        product.setDescriptionUs(productCrudRequest.getDescriptionUs());
-        product.setDescriptionRu(productCrudRequest.getDescriptionRu());
         try {
             if (!file.isEmpty()) {
                 String fileName = productService.saveImage(file);

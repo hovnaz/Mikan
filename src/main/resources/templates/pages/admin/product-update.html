@@ -46,16 +46,6 @@
 <th:block th:insert="pages/admin/fragments::header"></th:block>
 <form action="/admin/product/edit" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" th:value="${product.id}">
-    <input type="text" placeholder="title english" th:value="${product.titleUs}" name="titleUs" required
-           maxlength="255">
-    <input type="text" placeholder="title russian" th:value="${product.titleRu}" name="titleRu" minlength="4">
-    <input type="text" placeholder="title armenian" th:value="${product.titleHy}" name="titleHy" minlength="4">
-    <textarea placeholder="description english" th:text="${product.descriptionUs}" name="descriptionUs" minlength="8"
-              maxlength="500"></textarea>
-    <textarea placeholder="description russian" th:text="${product.descriptionRu}" name="descriptionRu" minlength="8"
-              maxlength="500"></textarea>
-    <textarea placeholder="description armenian" th:text="${product.descriptionHy}" name="descriptionHy" minlength="8"
-              maxlength="500"></textarea>
     <div style="display: flex; gap: 5px; align-items: center">
         <img th:src="'/getProductPic/' + ${product.image}" alt="">
         <input id="file" type="file" name="imageFile" accept="image/png, image/gif, image/jpeg" style="border: none">
